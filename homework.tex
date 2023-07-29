@@ -135,6 +135,37 @@
             \item [c.] The current solution is feasible but not optimal.
         \end{itemize}
     \end{framed}
+    \begin{itemize}
+        \item [a.]  
+        \item [b.] Note that $\beta \geq 0$ for $x$ to be feasible. We then have to find some $u$ such that no component is positive. 
+            This, as seem from section 3.2, ensures that the optimal cost is $-\infty$. Thus, we choose $\delta \leq 0$ and 
+            $\alpha, \gamma < 0$. $\eta$ is free. A possible tableau could be: 
+            \begin{center}
+                \begin{tabular}{|c|ccccc|}
+                    \hline
+                    -10&-1&-2&0&0&0\\
+                    \hline
+                    4&-1&7&1&0&0\\
+                    1&-1&-4&0&1&0\\
+                    1&-1&3&0&0&1\\
+                    \hline
+                \end{tabular}
+            \end{center}    
+        \item [c.] To be feasible $\beta \geq 0$. The rest of the variables are free as long as at least one 
+            $\delta, \gamma, \alpha \geq 0$ to avoid an optimal cost of $-\infty$. We will require $\alpha, \beta, \gamma, \delta, 
+            \eta > 0$ giving a possible tableau of:
+            \begin{center}
+                \begin{tabular}{|c|ccccc|}
+                    \hline
+                    -10&5&-2&0&0&0\\
+                    \hline
+                    4&-1&1&1&0&0\\
+                    1&1&-4&0&1&0\\
+                    5&1&3&0&0&1\\
+                    \hline
+                \end{tabular}
+            \end{center}
+    \end{itemize}
 \newpage
     \begin{framed} 
     \item [\textbf{P. 6}] Consider the following linear programming problem with a single constraint: 
