@@ -35,7 +35,7 @@
         & -x_{1}-4 x_{2}+3 x_{3}=1 \\
         & x_{1}, x_{2}, x_{3}, x_{4}, x_{5} \geq 0
         \end{array}
-    \] Some 
+    \] 
     \end{framed}
     We see 4 iterations of Phase I. We construct the first tableau with the introduction of auxiliary variables: 
     \begin{center}
@@ -64,14 +64,56 @@
     Note that we completely removed $x_6$ from the tableau as it no longer serves any purpose. We now let $x_2$ enter the basis with
     $x_7$ exiting: 
     \begin{center}
-        \begin{tabular}{|c|cccccccc|}
+        \begin{tabular}{|c|cccccc|}
+            \hline
             $-\rfrac{2}{3}$&$-\rfrac{1}{3}$&0&0&$\rfrac{17}{3}$&$-\rfrac{1}{3}$&0\\
             \hline
-            $\rfrac{2}{3}$&$\rfrac{1}{3}$&1&0&$\rfrac{4}{3}$&$\rfrac{1}{3}$&0
-
-
+            $\rfrac{2}{3}$&$\rfrac{1}{3}$&1&0&$\rfrac{4}{3}$&$\rfrac{1}{3}$&0\\
+            $\rfrac{2}{3}$&$\rfrac{1}{3}$&0&0&$-\rfrac{17}{3}$&$\rfrac{1}{3}$&1\\
+            $\rfrac{11}{9}$&$\rfrac{1}{9}$&0&1&$\rfrac{16}{9}$&$\rfrac{4}{9}$&0\\
+            \hline
         \end{tabular}
     \end{center}
+    Now we let $x_1$ enter with $x_7$ exiting. Thus we get the final tableau: 
+    \begin{center}
+        \begin{tabular}{|c|ccccc|}
+            \hline
+            0&0&0&0&0&0\\
+            \hline
+            0&0&1&0&0&0\\
+            2&1&0&0&-17&1\\
+            1&0&0&1&$\rfrac{11}{3}$&$\rfrac{1}{3}$\\
+            \hline
+        \end{tabular}
+    \end{center}
+    and the basic feasible solution is $x = (2,0,1,0,0)$. \\
+    \textbf{Phase II} \\
+    We copy over the same tableau and calculate the new reduced cost and cost to get :
+    \begin{center}
+        \begin{tabular}{|c|ccccc|}
+            \hline
+            7&2&3&3&-2&3\\
+            \hline
+            2&1&0&0&-17&0\\
+            0&0&1&0&7&0\\
+            1&0&0&1&$\rfrac{11}{3}$&$\rfrac{1}{3}$\\
+            \hline
+        \end{tabular}
+    \end{center}
+    We do one more iteration to get:
+    \begin{center}
+        \begin{tabular}{|c|ccccc|}
+            \hline
+            7&2&$\rfrac{23}{7}$&3&0&3\\
+            \hline
+            2&1&&0&0&1\\
+            0&0&&0&1&0\\
+            1&0&&1&0&0\\
+            \hline
+        \end{tabular}
+    \end{center}
+    We now see that there are no more negative values in $c$ so the optimal solution is $x = (2,0,1,0,0)$. Note that we can leave some
+    values blank as calculating them does not give any information useful to the problem. 
 \newpage
     \begin{framed} 
     \item [\textbf{P. 4}] While solving a standard form problem, we arrive at the following tableau, with $x_{3}, x_{4}$, and $x_{5}$ 
