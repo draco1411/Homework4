@@ -181,6 +181,21 @@
         \item [b.] Assuming that the optimal cost is finite, develop a simple method for obtaining an optimal solution directly.
     \end{itemize}
     \end{framed}
+    \begin{itemize}
+        \item [a.] As instructed, we break $b$ into 3 cases: \\
+            \begin{itemize}
+                \item $b = 0:$ This is trivial as $x = \textbf{0}$ is always a solution 
+                \item $b > 0:$ We only require some $a_j > 0$ as we can choose $x$ such that $x_i = 0 \quad \forall i \neq j$ and 
+                    $x_j = \frac{b}{a_j}$. 
+                \item $b < 0:$ Similarly, this is feasible of some $a_j < 0$. Again, we can always choose some $x$ such that
+                    $x_i = 0 \forall i \neq j$ and $x_j = \frac{b}{a_j}$. 
+            \end{itemize}
+        \item [b.] Noticing that we only have one constraint, we note that the solution will only have 1 non-zero value. To 
+            find this value, consider $ \frac{b}{a_i}$. The smallest of these ratios is the optimal cost if we let all other values
+            be 0 and $a = \textbf{1}$. Because $a \neq \textbf{1}$ in most cases, we account for this by multiplying $c_i$ to the ratio 
+            and considering the smallest. That is, $ \frac{b \cdot c_i}{a_i}$. The smallest of this gives an optimal solution. That is, 
+            $x_i = \frac{b}{a_j}$ and $x_j = 0 \forall j \neq i$ where $i$ is the smallest of the $ \frac{b \cdot c_i}{a_i}$. 
+    \end{itemize}
 \newpage
     \begin{framed} 
     \item [\textbf{P. 8}] Consider the following optimization problem $(P)$ : find a vector $x \in \mathbb{R}^{n}$ that satisfies 
