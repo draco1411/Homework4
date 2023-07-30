@@ -30,7 +30,8 @@
         \item [b.] True. When a variable leaves the basis, its corresponding coefficient becomes 0. Since pivoting is done strictly 
             negative values, and the pivoting column corresponds to variables entering the basis, it is not possible for a variable to 
             exit and then enter the next iteration. 
-        \item [c.]
+        \item [c.] False. From the example worked in video, we say $x_4$ enter the basis on the first iteration and exit the very next 
+            iteration. 
         \item [d.] False. We can find a LP problem with multiple, non-degenerate, optimal solutions. Consider the LP problem 
             \begin{align*}
                 \text{max } & x_1 + x_2 \\
@@ -136,8 +137,10 @@
         being the basic variables: 
         \begin{center}
         \begin{tabular}{|c|ccccc|}
-            \hline-10 & $\delta$ & -2 & 0 & 0 & 0 \\
-            \hline 4 & -1 & $\eta$ & 1 & 0 & 0 \\
+            \hline
+            -10 & $\delta$ & -2 & 0 & 0 & 0 \\
+            \hline
+            4 & -1 & $\eta$ & 1 & 0 & 0 \\
             1 & $\alpha$ & -4 & 0 & 1 & 0 \\
             $\beta$ & $\gamma$ & 3 & 0 & 0 & 1 \\
             \hline
@@ -152,7 +155,19 @@
         \end{itemize}
     \end{framed}
     \begin{itemize}
-        \item [a.]  
+        \item [a.]From Theorem 3.1(b), $x$ must be degenerate so $\beta = 0$. The other variables are free so we get the following as 
+            as possible tableau:
+            \begin{center}
+                \begin{tabular}{|c|ccccc|}
+                    \hline
+                    -10&1&-2&0&0&0\\
+                    \hline
+                    4&-1&1&1&0&0\\
+                    1&1&-4&0&1&0
+                    0&1&3&0&0&1\\
+                    \hline
+                \end{tabular}
+            \end{center}
         \item [b.] Note that $\beta \geq 0$ for $x$ to be feasible. We then have to find some $u$ such that no component is positive. 
             This, as seem from section 3.2, ensures that the optimal cost is $-\infty$. Thus, we choose $\delta \leq 0$ and 
             $\alpha, \gamma < 0$. $\eta$ is free. A possible tableau could be: 
