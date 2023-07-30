@@ -24,6 +24,22 @@
                 where $m$ is the number of equality constraints.
         \end{itemize}
     \end{framed}
+    \begin{itemize}
+        \item [a.] False. $c^\prime x < c^\prime(x + \theta d)$ given $\theta > 0$ and $d > 0$, values that are always 
+            present in any positive direction. Thus the cost cannot be unchanged.
+        \item [b.] True. When a variable leaves the basis, its corresponding coefficient becomes 0. Since pivoting is done strictly 
+            negative values, and the pivoting column corresponds to variables entering the basis, it is not possible for a variable to 
+            exit and then enter the next iteration. 
+        \item [c.]
+        \item [d.] False. We can find a LP problem with multiple, non-degenerate, optimal solutions. Consider the LP problem 
+            \begin{align*}
+                \text{max } & x_1 + x_2 \\
+                \text{s.t. } & x_1 + x_2 \leq 1 \\
+                            &x \geq 0
+            \end{align*} 
+            Now every point where $x_1 + x_2 = 1$ and $x \geq 0$ is optimal. 
+        \item [e.] True. By Theorem 2.4(b), $x_i = 0 \forall i \neq B(1),\ldots,B(m)$, so there can be only $m$ positive variables. 
+    \end{itemize}
 \newpage
     \begin{framed} 
     \item [\textbf{P. 3}] Solve completely (i.e., both Phase I and Phase II) via the simplex method the following problem: 
@@ -212,5 +228,12 @@
         are equivalent - you must specify how to map a feasible solution of $(P)$ to a feasible solution of 
         $\left(P^{\prime}\right)$ with greater or equal cost, and viceversa.)
     \end{framed}
+    \begin{proof}
+        Let $x$ be an feasible solution of $P$. Then for any positive multiple of $x$ is also feasible so scale $x$ to $x^\star$ so
+        the smallest positive value is greater than 1. Let another variable, $y$ have components $y_i = 1$ if $x^\star > 0$ and $y_i = 
+        0$. Otherwise, let $z = x^\star -y$ and note that $z$ is feasible. We can use $P$ since we can force that $y_i = 0$ or $1$ 
+        for all $i$. Letting $z = x^star - y$, we can maximize $\sum_{i=1}^ny_i$ where the result just gives us the number of positive 
+        components. 
+    \end{proof}
 \end{jacklist}
 \end{document}
